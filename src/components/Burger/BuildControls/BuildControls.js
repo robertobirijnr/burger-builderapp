@@ -6,16 +6,16 @@ const controls = [
   { label: "Salad", type: "salad" },
   { label: "Bacon", type: "bacon" },
   { label: "Cheese", type: "cheese" },
-  { label: "Meat", type: "meat" }
+  { label: "Meat", type: "meat" },
 ];
 
-const BuildControls = props => {
+const BuildControls = (props) => {
   return (
     <div className="BuildControls">
       <p>
         Current Price:GhC <strong>{props.price.toFixed(2)}</strong>{" "}
       </p>
-      {controls.map(ctrl => (
+      {controls.map((ctrl) => (
         <BuildControl
           key={ctrl.label}
           label={ctrl.label}
@@ -24,6 +24,13 @@ const BuildControls = props => {
           disabled={props.disabled[ctrl.type]}
         />
       ))}
+      <button
+        onClick={props.ordered}
+        disabled={!props.purchaseable}
+        className="OrderButton"
+      >
+        ORDER NOW
+      </button>
     </div>
   );
 };
