@@ -1,10 +1,11 @@
 import React from "react";
 import "./Layout.css";
+import Toolbar from "../Navigation/Toobar/Toolbar";
 
-const Layout = props => {
+const Layout = (props) => {
   return (
     <div>
-      <div>Toolbar, SideDrawer,Backdrop</div>
+      <Toolbar />
       <main className="Content">{props.children}</main>
     </div>
   );
